@@ -6,7 +6,7 @@ from Backend import db, __version__
 
 # --- Configuration ---
 BASE_URL = Telegram.BASE_URL
-ADDON_NAME = "DFF Telegram"
+ADDON_NAME = "DFF Stremio"
 ADDON_VERSION = __version__
 PAGE_SIZE = 15
 
