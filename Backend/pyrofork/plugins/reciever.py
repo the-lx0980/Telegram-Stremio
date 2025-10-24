@@ -37,6 +37,7 @@ async def file_receive_handler(client: Client, message: Message):
             if message.video or (message.document and message.document.mime_type.startswith("video/")):
                 file = message.video or message.document
                 title = message.caption or file.file_name
+                title_b = title
                 msg_id = message.id
                 size = get_readable_file_size(file.file_size)
                 channel = str(message.chat.id).replace("-100", "")
@@ -47,6 +48,8 @@ async def file_receive_handler(client: Client, message: Message):
                     return
 
                 title = remove_urls(title)
+                if "Complete_" in title_b:
+                    title += 'all Ep in E01'    
                 if not title.endswith(('.mkv', '.mp4')):
                     title += '.mkv'
 
