@@ -48,8 +48,6 @@ async def file_receive_handler(client: Client, message: Message):
                     return
 
                 title = remove_urls(title)
-                if "Complete_" in title_b:
-                    title += 'all Ep in E01'    
                 if not title.endswith(('.mkv', '.mp4')):
                     title += '.mkv'
 
