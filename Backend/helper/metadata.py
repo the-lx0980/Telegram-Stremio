@@ -81,7 +81,11 @@ async def metadata(filename: str, channel: int, msg_id) -> dict | None:
     if isinstance(season, list) or isinstance(episode, list):
         LOGGER.warning(f"Invalid season/episode format for {filename}: {parsed}")
         return None
-    
+        
+    if season:
+        if not episode:
+            episode = 'Complete'
+            
     if season and not episode:
         LOGGER.warning(f"Missing episode in {filename}: {parsed}")
         return None
