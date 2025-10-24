@@ -84,7 +84,7 @@ async def metadata(filename: str, channel: int, msg_id) -> dict | None:
         
     if season:
         if not episode:
-            episode = 'Complete'
+            episode = '1'
             
     if season and not episode:
         LOGGER.warning(f"Missing episode in {filename}: {parsed}")
